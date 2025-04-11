@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "star", "san-serif";
+}
+@font-face {
+  font-family: star;
+  src: url("/font/syne.ttf");
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  height: auto;
+  background-color: #f9f9f9;
+  cursor: none;
+}
