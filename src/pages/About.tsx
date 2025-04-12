@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
 import Button from "../components/Button";
+import { RootState } from "../redux/store";
 
 const About = () => {
+  const lightMode = useSelector((state: RootState) => state.mode.lightMode);
+
   return (
-    <div className="flex flex-col text-sm mx-6 lg:mt-8">
+    <div className="flex flex-col text-sm">
       <div className="w-full flex flex-wrap justify-between">
         <div className="flex  justify-center items-start flex-col w-full mb-10 lg:mb-0 lg:w-5/12 gap-8">
           <h2 className="tracking-[5px] text-xl font-bold uppercase">
@@ -16,7 +20,7 @@ const About = () => {
             collaborations.
           </p>
           <a href="/img/cv.zip" download="cv.zip">
-            <Button text="DOWNLOAD CV" />
+            <Button text="DOWNLOAD CV" mode={lightMode} />
           </a>
         </div>
         <div className="flex flex-col w-full lg:w-5/12 gap-8">

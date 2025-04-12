@@ -1,7 +1,11 @@
 import { Link } from "react-router";
 import Button from "../components/Button";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const Home = () => {
+  const lightMode = useSelector((state: RootState) => state.mode.lightMode);
+
   return (
     <div className="flex mx-6 w-full">
       <div className="w-full flex flex-wrap justify-between h-full items-start">
@@ -16,7 +20,7 @@ const Home = () => {
           </h3>
           <span className="flex-1"></span>
           <Link to="/portfolio">
-            <Button text="view portfolio" />
+            <Button text="view portfolio" mode={lightMode} />
           </Link>
         </div>
         <div className="order-1 lg:order-2 group w-6/12 h-80 flex m-6 lg:m-0">

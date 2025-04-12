@@ -7,7 +7,7 @@ import { VscSourceControl } from "react-icons/vsc";
 import { SiSpeedtest } from "react-icons/si";
 const Services = () => {
   return (
-    <div className="flex mx-6 w-full flex-col gap-12 mt-20">
+    <div className="flex mx-6 w-full flex-col gap-12 ">
       <h3 className="uppercase font-bold tracking-widest text-xl">
         // Top Notch Services
       </h3>
