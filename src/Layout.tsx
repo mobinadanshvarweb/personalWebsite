@@ -29,7 +29,7 @@ const Layout = () => {
               setMenu(false);
             }}
           >
-            <div className="w-full flex justify-end">
+            <div className="w-full hidden lg:flex justify-end">
               <DarkMode />
             </div>
 

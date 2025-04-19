@@ -9,7 +9,7 @@ const DarkMode = () => {
   return (
     <div
       className={`relative w-10 h-7 px-6 rounded-3xl  bg-[#767676]  cursor-pointer transition-all duration-300  ${
-        lightMode ? " bg-[#767676]" : " bg-black"
+        lightMode ? " bg-[#767676]" : " bg-[#767676] lg:bg-black"
       }`}
       onClick={() => {
         dispatch(setLightMode(!lightMode));

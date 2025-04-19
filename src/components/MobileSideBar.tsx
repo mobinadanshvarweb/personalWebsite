@@ -1,3 +1,4 @@
+import DarkMode from "./DarkMode";
 import SideBar from "./SideBar";
 
 const MobileSideBar = ({
@@ -21,11 +22,22 @@ const MobileSideBar = ({
           setMenu(false);
         }}
       >
-        <SideBar text="home" src="home" />
-        <SideBar text="about" src="about" />
-        <SideBar text="service" src="services" />
-        <SideBar text="portfolio" src="portfolio" />
-        <SideBar text="contact" src="contact" />
+        <SideBar mode={mode} text="home" src="home" />
+        <SideBar mode={mode} text="about" src="about" />
+        <SideBar mode={mode} text="service" src="services" />
+        <SideBar mode={mode} text="portfolio" src="portfolio" />
+        <SideBar mode={mode} text="contact" src="contact" />
+        <li
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="w-full py-3 flex justify-center items-center"
+        >
+          <span className="w-1/2 flex justify-center items-center  border-r-[1px] border-[#767676]">
+            <DarkMode />
+          </span>
+          <span className="w-1/2 flex justify-center items-center "></span>
+        </li>
       </ul>
     </div>
   );

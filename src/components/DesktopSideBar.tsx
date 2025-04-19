@@ -17,11 +17,11 @@ const DesktopSideBar = ({ mode }: { mode: boolean }) => {
             mowin dj
           </h1>
           <ul className="flex flex-col uppercase gap-4 text-[13px] ">
-            <SideBar text="home" src="home" />
-            <SideBar text="about" src="about" />
-            <SideBar text="service" src="services" />
-            <SideBar text="portfolio" src="portfolio" />
-            <SideBar text="contact" src="contact" />
+            <SideBar mode={mode} text="home" src="home" />
+            <SideBar mode={mode} text="about" src="about" />
+            <SideBar mode={mode} text="service" src="services" />
+            <SideBar mode={mode} text="portfolio" src="portfolio" />
+            <SideBar mode={mode} text="contact" src="contact" />
           </ul>
         </div>
         <span className="text-[#999] flex flex-col gap-2">
