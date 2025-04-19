@@ -5,10 +5,12 @@ const MobileSideBar = ({
   menu,
   setMenu,
   mode,
+  lang,
 }: {
   menu: boolean;
   setMenu: (x: boolean) => void;
   mode: boolean;
+  lang: boolean;
 }) => {
   return (
     <div
@@ -22,11 +24,36 @@ const MobileSideBar = ({
           setMenu(false);
         }}
       >
-        <SideBar mode={mode} text="home" src="home" />
-        <SideBar mode={mode} text="about" src="about" />
-        <SideBar mode={mode} text="service" src="services" />
-        <SideBar mode={mode} text="portfolio" src="portfolio" />
-        <SideBar mode={mode} text="contact" src="contact" />
+        <SideBar
+          lang={lang}
+          mode={mode}
+          text={`${lang ? "home" : "خانه"}`}
+          src="home"
+        />
+        <SideBar
+          lang={lang}
+          mode={mode}
+          text={`${lang ? "about" : "درباره من"}`}
+          src="about"
+        />
+        <SideBar
+          lang={lang}
+          mode={mode}
+          text={`${lang ? "service" : "خدمات"}`}
+          src="services"
+        />
+        <SideBar
+          lang={lang}
+          mode={mode}
+          text={`${lang ? "portfolio" : "نمونه کار"}`}
+          src="portfolio"
+        />
+        <SideBar
+          lang={lang}
+          mode={mode}
+          text={`${lang ? "contact" : "راه ارتباطی"}`}
+          src="contact"
+        />
         <li
           onClick={(e) => {
             e.stopPropagation();

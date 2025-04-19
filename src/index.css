@@ -2,10 +2,15 @@
 
 @theme {
   --font-display: "star", "san-serif";
+  --font-farsi: "vazir";
 }
 @font-face {
   font-family: star;
   src: url("/font/syne.ttf");
+}
+@font-face {
+  font-family: vazir;
+  src: url("/font/vazir.ttf");
 }
 * {
   box-sizing: border-box;
