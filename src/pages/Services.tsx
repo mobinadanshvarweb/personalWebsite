@@ -13,7 +13,7 @@ const Services = () => {
   return (
     <div
       dir={EnOrFa ? "ltr" : "rtl"}
-      className="flex mx-6 w-full flex-col gap-12 "
+      className="flex mx-6 w-full flex-col gap-12"
     >
       <h3 className="uppercase font-bold tracking-widest text-xl">
         {EnOrFa ? " // Top Notch Services" : "//خدمات تخصصی من"}
@@ -56,7 +56,7 @@ const Services = () => {
           ]}
         />
       </div>
-      <div className="flex w-full justify-between gap-10">
+      <div className="flex flex-wrap lg:flex-nowrap w-full justify-between gap-10">
         <ServiceCart
           title="API Integration & Tools"
           icon={<GrAttachment color="#767676" size={40} />}

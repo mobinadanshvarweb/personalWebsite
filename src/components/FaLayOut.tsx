@@ -6,16 +6,16 @@ import DesktopSideBar from "./DesktopSideBar";
 const FaLayOut = ({
   setMenu,
   mode,
-  lang
+  lang,
 }: {
   setMenu: (x: boolean) => void;
   mode: boolean;
-  lang:boolean
+  lang: boolean;
 }) => {
   return (
     <>
       <div
-        className="flex-1  mb-10 flex flex-col w-full min-h-screen lg:justify-start gap-20 p-6 lg:items-center"
+        className="flex-1 mb-10 flex flex-col w-full min-h-screen justify-center lg:justify-start gap-20 p-6 items-center"
         onClick={() => {
           setMenu(false);
         }}
