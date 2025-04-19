@@ -1,26 +1,26 @@
 import { Link } from "react-router";
-import Button from "../components/Button";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import Button from "../../components/Button";
 
-const Home = () => {
-  const lightMode = useSelector((state: RootState) => state.mode.lightMode);
-
+const FaHome = ({ mode, lang }: { mode: boolean; lang: boolean }) => {
   return (
-    <div className="flex mx-6 w-full">
+    <div dir="rtl" className="flex mx-6 w-full">
       <div className="w-full flex flex-wrap justify-between h-full items-start">
         <div className="order-2 lg:order-1 flex gap-8 flex-col w-full mb-10 lg:mb-0 lg:w-6/12">
           <h2 className="mb-4 text-lg text-[#767676] uppercase">
-            // Mobina Daneshvar
+            // مبینا دانشور
           </h2>
           <h3 className="uppercase font-bold tracking-wider text-2xl">
-            Creative
+            توسعه‌دهنده فرانت‌اند
             <br />
-            Frontend developer
+            ساخت وب‌سایت‌های جذاب و کاربردی
           </h3>
+
           <span className="flex-1"></span>
           <Link to="/portfolio">
-            <Button text="view portfolio" mode={lightMode} />
+            <Button
+              text={lang ? "view portfolio" : "نمایش نمونه کارها"}
+              mode={mode}
+            />
           </Link>
         </div>
         <div className="order-1 lg:order-2 group w-6/12 h-80 flex m-6 lg:m-0">
@@ -39,4 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default FaHome;

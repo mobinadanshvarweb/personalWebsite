@@ -5,11 +5,18 @@ import { GrAppsRounded } from "react-icons/gr";
 import { GrAttachment } from "react-icons/gr";
 import { VscSourceControl } from "react-icons/vsc";
 import { SiSpeedtest } from "react-icons/si";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 const Services = () => {
+  const EnOrFa = useSelector((state: RootState) => state.mode.EnOrFa);
+
   return (
-    <div className="flex mx-6 w-full flex-col gap-12 ">
+    <div
+      dir={EnOrFa ? "ltr" : "rtl"}
+      className="flex mx-6 w-full flex-col gap-12 "
+    >
       <h3 className="uppercase font-bold tracking-widest text-xl">
-        // Top Notch Services
+        {EnOrFa ? " // Top Notch Services" : "//خدمات تخصصی من"}
       </h3>
       <div className="flex flex-wrap lg:flex-nowrap w-full justify-between gap-10">
         <ServiceCart
