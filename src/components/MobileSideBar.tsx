@@ -1,4 +1,5 @@
 import DarkMode from "./DarkMode";
+import MultiLanguage from "./MultiLanguage";
 import SideBar from "./SideBar";
 
 const MobileSideBar = ({
@@ -63,7 +64,9 @@ const MobileSideBar = ({
           <span className="w-1/2 flex justify-center items-center  border-r-[1px] border-[#767676]">
             <DarkMode />
           </span>
-          <span className="w-1/2 flex justify-center items-center "></span>
+          <span className="w-1/2 flex justify-center items-center ">
+            <MultiLanguage />
+          </span>
         </li>
       </ul>
     </div>
