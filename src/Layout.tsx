@@ -51,7 +51,7 @@ const Layout = () => {
               </div>
             </>
           ) : (
-            <FaLayOut mode={lightMode} setMenu={setMenu} />
+            <FaLayOut mode={lightMode} setMenu={setMenu} lang={EnOrFa} />
           )}
         </div>
       </div>

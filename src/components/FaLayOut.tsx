@@ -6,9 +6,11 @@ import DesktopSideBar from "./DesktopSideBar";
 const FaLayOut = ({
   setMenu,
   mode,
+  lang
 }: {
   setMenu: (x: boolean) => void;
   mode: boolean;
+  lang:boolean
 }) => {
   return (
     <>
@@ -28,7 +30,7 @@ const FaLayOut = ({
 
         <Outlet />
       </div>
-      <DesktopSideBar mode={mode} />
+      <DesktopSideBar lang={lang} mode={mode} />
     </>
   );
 };
