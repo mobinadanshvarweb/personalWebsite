@@ -15,14 +15,14 @@ const SideBar = ({
     <NavLink
       to={src}
       className={({ isActive }) =>
-        `cursor-pointer transition-all font-medium flex justify-center 
+        `cursor-pointer transition-all duration-500 flex justify-center 
         ${lang ? "lg:justify-start" : "lg:justify-end"}
         ${mode ? "hover:text-black" : "hover:text-white"}
        hover:text-black ${
          isActive && mode
-           ? "text-black"
-           : `text-[#767676] hover:text-[#767676] ${
-               isActive && !mode ? "text-white" : ""
+           ? "text-black font-bold"
+           : `text-[#767676] hover:text-[#767676]  ${
+               isActive && !mode ? "text-white font-bold" : "font-medium"
              }`
        }`
       }

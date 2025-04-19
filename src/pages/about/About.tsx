@@ -65,9 +65,7 @@ const About = () => {
                 <li className="flex gap-12 leading-9">
                   <span className="w-3/12 font-medium ">Phone:</span>
                   <span className="text-[#767676] relative group transition-all duration-500">
-                    <a className="line_effect" href="#">
-                      +98 991 205 03 16
-                    </a>
+                    <a href="tel:+989912050316">+98 991 205 03 16</a>
                     <span className="absolute bottom-0 left-0 w-0 h-[0.5px] bg-black group-hover:w-full transition-all duration-500"></span>
                   </span>
                 </li>
