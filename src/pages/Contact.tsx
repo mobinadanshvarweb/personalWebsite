@@ -5,11 +5,47 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsChatDots } from "react-icons/bs";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import {
+  setEmail,
+  setMessage,
+  setName,
+  setValidationErrors,
+} from "../redux/slice/contact-slice";
+import { ContactSchema } from "../validation/contact.schema";
+import ErrorMessage from "../components/ErrorMessage";
 
 const Contact = () => {
+  const dispatch = useDispatch();
   const lightMode = useSelector((state: RootState) => state.mode.lightMode);
+  const name = useSelector((state: RootState) => state.contact.name);
+  const email = useSelector((state: RootState) => state.contact.email);
+  const message = useSelector((state: RootState) => state.contact.message);
+  const validationErrors = useSelector(
+    (state: RootState) => state.contact.validationErrors
+  );
+
+  const handleSubmit = (e: React.FormEvent) => {
+    console.log("hi", validationErrors);
+
+    e.preventDefault();
+
+    // اعتبارسنجی با Zod
+    const result = ContactSchema.safeParse({ name, email, message });
+    if (!result.success) {
+      // در صورت وجود ارور، ارورهای فرم را در ریداکس ذخیره کن
+      const formErrors = result.error.formErrors.fieldErrors;
+      dispatch(setValidationErrors(formErrors)); // تنظیم ارورها در ریداکس
+      console.log(formErrors);
+      console.log(validationErrors, "vali");
+
+      return;
+    }
+
+    // اگر فرم معتبر بود، داده‌ها را ارسال کن
+    console.log("Form data submitted:", name, email, message);
+  };
 
   return (
     <div className="w-full flex flex-col !font-display gap-8">
@@ -17,7 +53,7 @@ const Contact = () => {
         // get in touch
       </h2>
       <div className="flex flex-col gap-12">
-        <div className="flex flex-col lg:flex-row  justify-around gap-12">
+        <div className="flex flex-col lg:flex-row justify-around gap-12">
           <ContactCarts
             content={<a className="font-display">Iran, Tehran</a>}
             icon={<IoLocationOutline size={30} />}
@@ -58,25 +94,42 @@ const Contact = () => {
             icon={<BsChatDots size={30} />}
           />
         </div>
-        <div className="flex flex-col gap-4">
+
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          {/* نمایش ارورهای فرم */}
+          {validationErrors && <ErrorMessage />}
           <div className="w-full flex flex-wrap lg:flex-nowrap gap-8">
             <div className="w-full lg:w-1/2 ">
-              <Input placeHolder="Name" type="text" />
+              <Input
+                placeholder="Name"
+                type="text"
+                value={name}
+                setValueAction={setName}
+              />
             </div>
             <div className="w-full lg:w-1/2 ">
-              <Input placeHolder="Email" type="text" />
+              <Input
+                placeholder="Email"
+                type="text"
+                value={email}
+                setValueAction={setEmail}
+              />
             </div>
           </div>
           <div className="w-full">
             <textarea
               className="w-full outline-none border border-[#939393a8] p-3 text-[#939393bd] resize-none"
               placeholder="Message"
+              value={message}
+              onChange={(e) => {
+                dispatch(setMessage(e.target.value));
+              }}
               name=""
               id=""
             ></textarea>
           </div>
           <Button mode={lightMode} text="Send Message" />
-        </div>
+        </form>
       </div>
     </div>
   );

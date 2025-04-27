@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import modeSlice from "./slice/multi-mood-slice";
+import contactSlice from "./slice/contact-slice";
 
 export const store = configureStore({
   reducer: {
     mode: modeSlice,
+    contact: contactSlice,
   },
 });
 

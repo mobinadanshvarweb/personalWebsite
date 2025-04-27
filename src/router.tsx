@@ -2,9 +2,10 @@ import { createBrowserRouter } from "react-router";
 import Layout from "./Layout";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
+
 import About from "./pages/about/About";
 import Home from "./pages/home/Home";
+import Portfolio from "./pages/portfolio/Portfolio";
 
 const router = createBrowserRouter([
   {
