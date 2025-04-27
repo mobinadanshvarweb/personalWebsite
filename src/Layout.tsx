@@ -8,13 +8,16 @@ import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import MultiLanguage from "./components/MultiLanguage";
 import FaLayOut from "./components/FaLayOut";
+import Modal from "./components/Modal";
 
 const Layout = () => {
   const [menu, setMenu] = useState(false);
   const lightMode = useSelector((state: RootState) => state.mode.lightMode);
   const EnOrFa = useSelector((state: RootState) => state.mode.EnOrFa);
+  const modal = useSelector((state: RootState) => state.mode.modal);
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col relative">
+      {modal && <Modal />}
       <div className="flex flex-1 ">
         <div
           className={`w-full h-auto overflow-x-hidden relative lg:min-h-screen   flex flex-col lg:flex-row  transition-all  duration-500

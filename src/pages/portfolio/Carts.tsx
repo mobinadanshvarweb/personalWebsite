@@ -1,14 +1,35 @@
+import { useDispatch } from "react-redux";
+import { setModal, setSelectedCart } from "../../redux/slice/multi-mood-slice";
+
 const Carts = ({
   src,
   title,
   desc,
+  id,
+  about,
 }: {
   src: string;
   title: string;
   desc: string;
+  id: string;
+  about: string;
 }) => {
+  const dispatch = useDispatch();
+
   return (
     <figure
+      onClick={() => {
+        dispatch(setModal(true));
+        dispatch(
+          setSelectedCart({
+            id: id,
+            title: title,
+            desc: desc,
+            src: src,
+            about: about,
+          })
+        );
+      }}
       className="w-full h-[360px] border border-black/40
  flex flex-col gap-4 p-3"
     >

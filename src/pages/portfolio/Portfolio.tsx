@@ -1,5 +1,5 @@
 import Carts from "./Carts";
-
+import portfolioArr from "../../data/portfolioData";
 const Portfolio = () => {
   return (
     <div className="flex  w-full">
@@ -7,16 +7,20 @@ const Portfolio = () => {
         <h2 className="tracking-[5px] text-xl font-bold uppercase">
           // Creative Portfolio
         </h2>
-        <div className="flex flex-wrap lg:flex-nowrap gap-6">
-          <div className="w-full lg:w-1/3">
-            <Carts src="/img/port.jpg" title="title" desc="description" />
-          </div>
-          <div className="w-full lg:w-1/3">
-            <Carts src="/img/port.jpg" title="title" desc="description" />
-          </div>
-          <div className="w-full lg:w-1/3">
-            <Carts src="/img/port.jpg" title="title" desc="description" />
-          </div>
+        <div className="flex flex-wrap lg:justify-between gap-8">
+          {portfolioArr.map((item) => {
+            return (
+              <div key={item.id} className="w-full  lg:w-[30%] xl:w-[30.9%]">
+                <Carts
+                  src={item.src}
+                  title={item.title}
+                  desc={item.desc}
+                  id={item.id}
+                  about={item.about}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
