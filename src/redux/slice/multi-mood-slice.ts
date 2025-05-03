@@ -11,6 +11,7 @@ export interface ModeState {
     title: string;
     desc: string;
     about: string;
+    lang: boolean;
   };
 }
 

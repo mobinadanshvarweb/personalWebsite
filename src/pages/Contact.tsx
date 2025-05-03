@@ -118,7 +118,7 @@ const Contact = () => {
           </div>
           <div className="w-full">
             <textarea
-              className="w-full outline-none border border-[#939393a8] p-3 text-[#939393bd] resize-none"
+              className="w-full outline-none border border-[#939393a8] p-3 text-[#939393bd] focus:ring-1 focus:ring-gray-500 placeholder:text-[#939393bd] resize-none"
               placeholder="Message"
               value={message}
               onChange={(e) => {

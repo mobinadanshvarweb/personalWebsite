@@ -13,7 +13,10 @@ const Modal = () => {
   if (!selectedCart) return null;
 
   return (
-    <div className="w-full h-full lg:h-[100vh] fixed top-0 left-0 bg-black/80 flex justify-center items-center z-50 ">
+    <div
+      dir={selectedCart.lang ? "ltr" : "rtl"}
+      className="w-full h-full lg:h-[100vh] fixed top-0 left-0 bg-black/80 flex justify-center items-center z-50 "
+    >
       {/* محتویات مدال */}
       <div className="bg-white p-6 flex flex-col gap-4 w-8/12 h-[80%] overflow-y-auto relative">
         {/* عکس */}

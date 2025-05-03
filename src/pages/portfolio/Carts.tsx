@@ -7,12 +7,14 @@ const Carts = ({
   desc,
   id,
   about,
+  lang,
 }: {
   src: string;
   title: string;
   desc: string;
   id: string;
   about: string;
+  lang: boolean;
 }) => {
   const dispatch = useDispatch();
 
@@ -27,6 +29,7 @@ const Carts = ({
             desc: desc,
             src: src,
             about: about,
+            lang: lang,
           })
         );
       }}
