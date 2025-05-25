@@ -15,7 +15,7 @@ const MobileSideBar = ({
 }) => {
   return (
     <div
-      className={`absolute right-0 top-0 z-50  shadow w-52 min-h-screen mt-10 flex flex-col lg:hidden transition-all duration-500  
+      className={`absolute right-0 top-0 z-20  shadow w-52 min-h-screen mt-10 flex flex-col lg:hidden transition-all duration-500  
         ${mode ? "bg-white" : "bg-black"}
         ${menu ? "translate-x-[0]" : "translate-x-[100%]"}`}
     >
